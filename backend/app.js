@@ -15,7 +15,7 @@ process.on("uncaughtException", (err) => {
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: "https://ecommerce-seven-green-80.vercel.app", credentials: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 

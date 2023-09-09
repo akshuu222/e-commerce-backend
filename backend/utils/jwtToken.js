@@ -1,6 +1,6 @@
 const sendToken = async (currentUser, res, statusCode, message , next) => {
    try {
-    const token = user.getToken();
+    const token = currentUser.getToken();
     const options = {
       httpOnly: true,
       sameSite: "none", 

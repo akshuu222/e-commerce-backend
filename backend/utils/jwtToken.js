@@ -1,6 +1,6 @@
-const sendToken = async (currentUser, res, statusCode, message , next) => {
+const sendToken = async (user, res, statusCode, message , next) => {
    try {
-    const token = currentUser.getToken();
+    const token = user.getToken();
     const options = {
       httpOnly: true,
       sameSite: "none", 
@@ -9,9 +9,7 @@ const sendToken = async (currentUser, res, statusCode, message , next) => {
         Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
       ),
     };
-
-      const {password , ...user} = currentUser;
-      
+   
     res
       .status(statusCode)
       .cookie("token", token, options)
